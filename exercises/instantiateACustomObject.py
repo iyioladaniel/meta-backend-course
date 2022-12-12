@@ -8,11 +8,12 @@ class MyFirstClass:
 
     # Define function hand_list()
     def hand_list(self, philosopher, book):
+        print(MyFirstClass.index)
         print(philosopher + " wrote the book: " + book)
         # variable + “ wrote the book: ” + variable
         
 
 # Call function handlist()
 whodunnit = MyFirstClass()
-print(whodunnit.hand_list("Plato","Republic"))
-print(whodunnit.hand_list("Sun Tzu","The Art of War"))
+whodunnit.hand_list("Plato","Republic")
+whodunnit.hand_list("Sun Tzu","The Art of War")
