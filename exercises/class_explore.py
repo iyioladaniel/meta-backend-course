@@ -24,5 +24,6 @@ class B:
     print(a)
 
 print("Instantiating B..")
-b = B(a)
+b = B(A)
+print(dir(b))
 print(a.c)
