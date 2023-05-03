@@ -20,10 +20,3 @@ myHouse.num_rooms = 2
 #3. Calculate the cost evaluation given the rate of 5k per room
 print(myHouse.cost_evaluation(5000))
 
-bravo = 3
-b = B()
-class B:
-    bravo = 5
-    print("Inside class B")
-c = B()
-print(b.bravo)
