@@ -35,3 +35,25 @@ def home(request):
 
     response = HttpResponse(msg, content_type='text/html', charset='utf-8') #HttpResponse('This works!')
     return response #HttpResponse(path, content_type='text/html', charset='utf-8')
+
+def pathview(request, name, id):
+    return HttpResponse("Name: {}\n\nUserID: {}".format(name, id))
+
+def queryview(request):
+    name = request.GET['name']
+    id = request.GET['id']
+    return HttpResponse('Name: {} UserID: {}'.format(name,id))
+
+def showform(request):
+    return render(request, "form.html")
+
+def getform(request):
+    id = None
+    name = None
+    
+    if request.method == "POST":
+        id = request.POST['id']
+        name = request.POST['name']
+
+        #print(request.POST['id'], request.POST['name'])
+    return HttpResponse('Name: {} UserID: {}'.format(name , id))
