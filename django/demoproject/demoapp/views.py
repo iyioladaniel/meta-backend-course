@@ -54,6 +54,29 @@ def getform(request):
     if request.method == "POST":
         id = request.POST['id']
         name = request.POST['name']
+        age = request.POST['age']
 
         #print(request.POST['id'], request.POST['name'])
-    return HttpResponse('Name: {} UserID: {}'.format(name , id))
+    return HttpResponse('Name: {} Age: {} UserID: {}'.format(name, age, id))
+
+def menuitems(request, dish):
+    items = {
+        'pasta':'Pasta is a type of noodle made from the combination of wheat, water or eggs',
+        'falafel' : 'Falafel are deep fried patties or balls made from ',
+        'cheesecake' : 'Cheesecake is a type of dessert made with cream, soft cheese on top of cookie, pastry crust or graham cracker and fruit sauce toping.'
+    }
+    description = items[dish]
+    return HttpResponse(f"<h2> {dish} </h2>" + description)
+
+def drinks(request, drink_name):
+    drinks = {
+        'mocha': 'type of coffee',
+        'tea': 'type of beverage',
+        'lemonade': 'type of refreshment'
+    }
+    choice_of_drink = drinks[drink_name]
+    return HttpResponse(f"<h2>{drink_name}</h2>" + choice_of_drink)
+
+def display_menu_item(request, menu_id):
+
+    return HttpResponse(f"This is number {menu_id} menu") 
