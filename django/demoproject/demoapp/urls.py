@@ -13,4 +13,5 @@ urlpatterns = [
     path('drinks/<str:drink_name>', views.drinks, name='drink_name'),
     re_path(r'^menu_item/([0-9]{2})/$', views.display_menu_item), #what I used originally, but it still worked sha.
     re_path(r'^menu_item/(?P<menu_id>[0-9]{2})/$', views.display_menu_item),
+    path('login/', views.login, name='login'),
 ]

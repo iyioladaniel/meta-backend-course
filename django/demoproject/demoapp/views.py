@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponsePermanentRedirect
+from django.urls import reverse
 # Create your views here.
 
 def index(request):
@@ -79,4 +80,7 @@ def drinks(request, drink_name):
 
 def display_menu_item(request, menu_id):
 
-    return HttpResponse(f"This is number {menu_id} menu") 
+    return HttpResponse(f"This is number {menu_id} menu")
+
+def login(request):
+    return render(request, "login.html")

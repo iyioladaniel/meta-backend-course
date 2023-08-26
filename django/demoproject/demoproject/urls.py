@@ -21,5 +21,6 @@ urlpatterns = [
     #path('demo/', include('demoapp.urls')),
     path('admin/', admin.site.urls),
     path('demo/', include('demoapp.urls', namespace='demoapp')),
-    path('newdemo/', include('newapp.urls', namespace='newapp'))
+    path('newdemo/', include('newapp.urls', namespace='newapp')),
+    path('littlelemon/', include('littlelemon.urls', namespace='littlelemon')),
 ]

@@ -1,0 +1,7 @@
+<!-- commenting this out to make the form dynamic <form action="/demoapp/login" method='post'> -->
+<form action = "{% url 'demoapp:login' %}" method='POST'>
+    {% csrf_token %}
+    <p>Username: <input type='text' id='username' name='username'></p>
+    <p>Password: <input type='text' id='password' name='password'></p>
+    <input type="submit">
+</form>
