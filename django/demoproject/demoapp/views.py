@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponsePermanentRedirect
+from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseNotFound, Http404
+from .models import Product
 from django.urls import reverse
 # Create your views here.
 
@@ -84,3 +85,37 @@ def display_menu_item(request, menu_id):
 
 def login(request):
     return render(request, "login.html")
+
+''' learning Http Error handling in Django
+def my_view(request):
+    #...
+    if condition == True:
+        return HttpResponseNotFound('<h1>Page not found</h1>')
+        #return HttpResponse('<h1>Page not found</h1>', status_code='404')
+    else: 
+        return HttpResponse('<h1>Page was found</h1>')
+
+def detail (request, id):
+    try:
+        p = Product.objects.get(pk=id)
+        field = model._meta.get_field(field_name)
+    except Product.DoesNotExist:
+        raise Http404("Product does not exist")
+    except FieldDoesNotExist:
+        return HttpResponse('Field does not exist')
+    return HttpResponse(Product Found")
+
+def myview(request):
+    if not request.user.has_perm('myapp.view_mymodel'):
+        raise PermissionDenied()
+    return HttpResponse()
+
+def myview(request):
+    if request.metho == 'POST'
+        form = MyForm(request.POST)
+        if form.is_valid():
+            #process the form data
+        else:
+            return HttpRespose('Form submitted with invalid data')
+            
+'''
