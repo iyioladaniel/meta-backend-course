@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseNotFound, Http404
-from .models import Product
+#from .models import Product
 from django.urls import reverse
 # Create your views here.
 
@@ -117,5 +117,5 @@ def myview(request):
             #process the form data
         else:
             return HttpRespose('Form submitted with invalid data')
-            
+
 '''

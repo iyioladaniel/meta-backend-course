@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path 
+from . import views
 
 urlpatterns = [
     #path('demo/', include('demoapp.urls')),
@@ -23,4 +24,9 @@ urlpatterns = [
     path('demo/', include('demoapp.urls', namespace='demoapp')),
     path('newdemo/', include('newapp.urls', namespace='newapp')),
     path('littlelemon/', include('littlelemon.urls', namespace='littlelemon')),
+
 ]
+
+handler404 = 'demoproject.views.handler404' 
+
+#urlpatterns []
